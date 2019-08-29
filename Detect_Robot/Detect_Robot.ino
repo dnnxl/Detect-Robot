@@ -47,12 +47,17 @@ void loop()                     // Funcion loop, es un bucle, se repite
   if (distance >= 200 || distance <= 0)       // Si la distancia es mayor a 200 o menor a 0 no se detecta ningún objeto.
   {
     Serial.println("no object detected");
+    Serial.println(distance);
+
     digitalWrite(Buzzer, LOW);                // Desactiva el buzzer
-    tone(Buzzer, 0);                          // Pone en frecuencia de 0Hz al buzzer
+    noTone(Buzzer);                          // Pone en frecuencia de 0Hz al buzzer
+    delay(1200);
   }
   else
   {
     Serial.println("object detected \n");
-    tone(Buzzer, 200);                        // Pone en frecuencia en 200Hz 
+    tone(Buzzer, 5);                        // Pone en frecuencia en 200Hz
+    delay(500);
+    noTone(Buzzer);
   }
 }
