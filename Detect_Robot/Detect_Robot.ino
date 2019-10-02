@@ -3,8 +3,8 @@ Servo servo;                  // Definir una instancia de servo.
 
 // Modulo joystick
 int angulo = 0 ;                // Inicializar el valor del angulo a 0 grados.
-int Eje_X = A1 ;                // Inicializar la variable Eje_X al pin analogico A1.
-int Eje_Y = A2 ;                // Inicializar la variable Eje_y al pin analogico A2.
+int Eje_X = A2 ;                // Inicializar la variable Eje_X al pin analogico A1.
+int Eje_Y = A3 ;                // Inicializar la variable Eje_y al pin analogico A2.
 int boton = 1;                  // Inicializar la variable boton al pin digital 1.
 
 // Modulo Servo
@@ -32,7 +32,7 @@ void setup()                    // Función setup, solo se ejecuta una vez en to
 
 void loop()                     // Funcion loop, es un bucle, se repite
 {
-  angulo = map(analogRead(A1), 0, 1024, 0, 180); // Mapea valores obtenidos del servo de 0 a 1024 a 0 hasta 180 para obtener el angulo.
+  angulo = map(analogRead(A2), 0, 1024, 0, 180); // Mapea valores obtenidos del servo de 0 a 1024 a 0 hasta 180 para obtener el angulo.
   servo.write(angulo);                        // Mueve el servo al angulo mapeado anteriormente.
   delay(250);                                 // Atrasa 250 milisegundos.
 
