@@ -3,16 +3,16 @@ Servo servo;                  // Definir una instancia de servo.
 
 // Modulo joystick
 int angulo = 0 ;                // Inicializar el valor del angulo a 0 grados.
-int Eje_X = A2 ;                // Inicializar la variable Eje_X al pin analogico A2.
-int Eje_Y = A3 ;                // Inicializar la variable Eje_y al pin analogico A3.
+int Eje_X = A2 ;                // Inicializar la variable Eje_X al pin analogico A1.
+int Eje_Y = A3 ;                // Inicializar la variable Eje_y al pin analogico A2.
 int boton = 1;                  // Inicializar la variable boton al pin digital 1.
 
 // Modulo Servo
 int ServoPin = 0;               // Inicializar la variable ServoPin al pin digital 0.
 
 // Modulo sensor ultrasonido
-const int trigPin = 3;          // Constante entero al pin digital 3
-const int echoPin = 2;          // Constante entero al pin digital 2
+const int trigPin = 3;          // Constante entero al pin digital 2
+const int echoPin = 2;          // Constante entero al pin digital 3
 
 // Definir otras variables
 long duration;                  // Variable que almacena la duración del echo del sensor ultrasonido.
@@ -23,6 +23,7 @@ int Buzzer = 4;                 // Inicializar la variable Buzzer al pin digital
 
 void setup()                    // Función setup, solo se ejecuta una vez en todo el programa.
 {
+
   servo.attach(ServoPin) ;      // Unir el pin 0 del ServoPin a la instancia del servo.
   pinMode(boton, INPUT_PULLUP); // Definir el pin boton como entrada.
   pinMode(trigPin, OUTPUT);     // Define el pin trigPin como salida.
@@ -56,8 +57,11 @@ void loop()                     // Funcion loop, es un bucle, se repite
   else
   {
     Serial.println("object detected \n");
+    digitalWrite(Buzzer, HIGH);                // Desactiva el buzzer
     tone(Buzzer, 5);                        // Pone en frecuencia en 200Hz
     delay(500);
     noTone(Buzzer);
+    digitalWrite(Buzzer, LOW);                // Desactiva el buzzer
+
   }
 }
