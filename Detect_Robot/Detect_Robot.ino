@@ -3,16 +3,16 @@ Servo servo;                  // Definir una instancia de servo.
 
 // Modulo joystick
 int angulo = 0 ;                // Inicializar el valor del angulo a 0 grados.
-int Eje_X = A2 ;                // Inicializar la variable Eje_X al pin analogico A1.
-int Eje_Y = A3 ;                // Inicializar la variable Eje_y al pin analogico A2.
+int Eje_X = A2 ;                // Inicializar la variable Eje_X al pin analogico A2.
+int Eje_Y = A3 ;                // Inicializar la variable Eje_y al pin analogico A3.
 int boton = 1;                  // Inicializar la variable boton al pin digital 1.
 
 // Modulo Servo
 int ServoPin = 0;               // Inicializar la variable ServoPin al pin digital 0.
 
 // Modulo sensor ultrasonido
-const int trigPin = 2;          // Constante entero al pin digital 2
-const int echoPin = 3;          // Constante entero al pin digital 3
+const int trigPin = 3;          // Constante entero al pin digital 3
+const int echoPin = 2;          // Constante entero al pin digital 2
 
 // Definir otras variables
 long duration;                  // Variable que almacena la duración del echo del sensor ultrasonido.
